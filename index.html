@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simply Seven</title>
+
+    <!-- LINK TO BARLOW GOOGLE FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&family=Creepster&family=Pirata+One&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- INTER AND POPPINS GOOGLE FONTS -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Poppins:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+      integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- LINK EXTERNAL STYLESHEET -->
+    <link rel="stylesheet" href="styles/style.css" />
+  </head>
+  <body>
+    <!-------------- HEADER SECTION -------------->
+    <header>
+      <nav class="header-nav">
+        <!-- LOGO -->
+        <img src="images/logoc.png" alt="Simply Seven News Logo" />
+
+        <!-- HAMBURGER MENU FOR MOBILE -->
+        <div class="hamburger-menu" id="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+
+        <!-- MAIN NAVIGATION -->
+        <ul class="nav-links" id="nav-links" aria-label="Main Navigation">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="#article-heading">Latest Articles</a></li>
+          <li><a href="#popular-posts-heading">Popular Posts</a></li>
+          <li><a href="#subscribe-section">Subscribe</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+
+        <!--SEARCH BAR-->
+        <div class="search-container">
+          <input type="text" placeholder="Search..." class="search-input" />
+          <i class="fas fa-search search-icon"></i>
+        </div>
+      </nav>
+    </header>
+
+    <!-------------- MAIN SECTION -------------->
+    <main class="container">
+      <!-- 1-HERO SECTON -->
+      <section id="hero">
+        <h1>
+          <span>S</span><span>I</span><span>M</span><span>P</span><span>L</span
+          ><span>Y</span> <span>S</span><span>E</span><span>V</span
+          ><span>E</span><span>N</span>
+        </h1>
+      </section>
+      <!-- Highlighted Article -->
+      <section id="top-highlights" class="highlights-section">
+        <div class="highlight-article">
+          <!-- Random article will be injected here by JavaScript -->
+          <div id="highlight-section" class="highlight"></div>
+        </div>
+
+        <!-- Trending Sidebar -->
+        <div class="highlight-sidebar">
+          <div class="sidebar-content">
+            <h2>Trending Now</h2>
+          </div>
+          <div class="animated-content">
+            <div id="animated-text" class="animated-text">
+              <!-- Trending Text Items -->
+              <span
+                >=> Explore the latest trends and insights in web development,
+                UI/UX design, and more.</span
+              >
+              <span
+                >=> Discover new tools and frameworks that can enhance your
+                workflow.</span
+              >
+              <span
+                >=> Learn about the best practices in responsive design.</span
+              >
+              <span
+                >=> Stay updated with the latest industry news and events.</span
+              >
+              <span
+                >=> Join communities and forums to connect with other
+                developers.</span
+              >
+              <span
+                >=> Improve your skills by taking on open-source projects and
+                challenges.</span
+              >
+              <span
+                >=> Dive deep into cutting-edge technologies like AI, Machine
+                Learning, and Cloud Computing.</span
+              >
+              <span
+                >=> Sharpen your problem-solving abilities through coding
+                competitions and hackathons.</span
+              >
+              <span
+                >=> Expand your knowledge in mobile development and
+                cross-platform applications.</span
+              >
+              <span
+                >=> Build your portfolio by creating real-world projects and
+                showcasing your expertise.</span
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3-LATEST ARTICLES SECTION -->
+      <h2 id="article-heading">Latest Articles</h2>
+      <section id="articles">
+        <!-- Gurdeep's Articles -->
+        <div class="article" id="gurdeep-article1">
+          <div class="image-container">
+            <img src="images/gurdeep/article1.png" alt="Simple Calculator" />
+          </div>
+          <h3>Creating a Simple Calculator with HTML, CSS, and JavaScript</h3>
+          <p class="excerpt">
+            Learn how to build a functional calculator using basic web
+            development technologies.
+          </p>
+          <p class="body-content">
+            A calculator is a basic yet essential tool that demonstrates the
+            power of programming. It supports addition, subtraction,
+            multiplication, and division, showcasing DOM manipulation and event
+            handling.
+          </p>
+          <p>Category: <span>JavaScript Applications</span></p>
+          <p class="tags">
+            Tags: <span>#JavaScript</span>, <span>#WebDevelopment</span>,
+            <span>#Calculator</span>
+          </p>
+
+          <p class="footer-content">
+            <span>Gurdeep Kaur</span>
+            <span>October 15, 2024</span>
+            <a href="article1.html" class="read-more">
+              <i class="fa fa-arrow-right read-more-icon"></i>
+            </a>
+          </p>
+        </div>
+
+        <div class="article" id="gurdeep-article2">
+          <div class="image-container">
+            <img src="images/gurdeep/article2.png" alt="Snake Game" />
+          </div>
+          <h3>Building a Classic Snake Game with JavaScript</h3>
+          <p class="excerpt">
+            Dive into the world of game development by recreating the classic
+            Snake Game.
+          </p>
+          <p class="body-content">
+            This project includes features like keyboard controls, collision
+            detection, and score tracking, built using HTML Canvas and
+            JavaScript. It demonstrates core game logic and canvas rendering
+            techniques.
+          </p>
+          <p>Category: <span>2D JavaScript Games</span></p>
+          <p class="tags">
+            Tags: <span>#JavaScript</span>, <span>#GameDevelopment</span>,
+            <span>#Canvas</span>
+          </p>
+
+          <p class="footer-content">
+            <span>Gurdeep Kaur</span>
+            <span>Nov 04, 2024</span>
+            <a href="article2.html" class="read-more">
+              <i class="fa fa-arrow-right read-more-icon"></i>
+            </a>
+          </p>
+        </div>
+
+        <div class="article" id="gurdeep-article3">
+          <div class="image-container">
+            <img
+              src="images/gurdeep/article3.png"
+              alt="Timer and Animation Control"
+            />
+          </div>
+          <h3>
+            Building an Interactive Timer and Smooth Animation Control System
+          </h3>
+          <p class="excerpt">
+            Explore an engaging project that combines real-time timers with
+            smooth animations using JavaScript, jQuery, Bootstrap, and CSS.
+          </p>
+          <p class="body-content">
+            This project includes a dynamic timer with selectable durations
+            (30s, 60s, 90s), a visually interactive progress bar, and animated
+            dots that move smoothly across the screen with vertical oscillation.
+            Features include start, pause, and stop controls, leveraging
+            JavaScript's <code>requestAnimationFrame</code> for fluid
+            animations. CSS plays a critical role in styling the components,
+            including the vibrant dot animations, hover effects on buttons, and
+            a visually appealing blurred background. The combination of HTML,
+            CSS, Bootstrap, and JavaScript showcases a well-rounded approach to
+            interactive front-end development.
+          </p>
+          <p>Category: <span>UI/UX Projects</span></p>
+          <p class="tags">
+            Tags: <span>#JavaScript</span>, <span>#Animation</span>,
+            <span>#CSS</span>, <span>#Bootstrap</span>
+          </p>
+
+          <p class="footer-content">
+            <span>Gurdeep Kaur</span>
+            <span>Nov 27, 2024</span>
+            <a href="article3.html" class="read-more">
+              <i class="fa fa-arrow-right read-more-icon"></i>
+            </a>
+          </p>
+        </div>
+
+        <div class="article" id="gurdeep-article4">
+          <div class="image-container">
+            <img
+              src="images/gurdeep/article4.png"
+              alt="Pink Mode Game - Interactive JavaScript Fun"
+            />
+          </div>
+          <h3>
+            Pink Mode Game - An Exciting JavaScript Multiplayer Experience
+          </h3>
+          <p class="excerpt">
+            Dive into the Pink Mode Game, an engaging multiplayer JavaScript
+            experience where players compete for the highest score while
+            managing turn-based actions.
+          </p>
+          <p class="body-content">
+            Pink Mode Game is a unique way to enhance your JavaScript knowledge.
+            This project introduces concepts such as managing state, dynamic DOM
+            manipulation, and handling player interactions. The game features a
+            turn-based system where players score points, switch turns, and
+            compete for the top position. Customizable player names, real-time
+            score updates, and active player indicators create a dynamic and
+            visually appealing environment. This project is perfect for those
+            wanting to build an interactive game using JavaScript.
+          </p>
+          <p>Category: <span>JavaScript Multiplayer Games</span></p>
+          <p class="tags">
+            Tags: <span>#JavaScript</span>, <span>#GameDevelopment</span>,
+            <span>#MultiplayerGame</span>, <span>#Frontend</span>
+          </p>
+
+          <p class="footer-content">
+            <span>Gurdeep Kaur</span>
+            <span>October 27, 2024</span>
+            <a href="article4.html" class="read-more">
+              <i class="fa fa-arrow-right read-more-icon"></i>
+            </a>
+          </p>
+        </div>
+
+        <div class="article" id="gurdeep-article5">
+          <div class="image-container">
+            <img src="images/gurdeep/article5.png" alt="Registration Form" />
+          </div>
+          <h3>Registration Form</h3>
+          <p class="excerpt">
+            Dive into this well-structured registration form to showcase your
+            skills and experience in a personalized way. Perfect for enhancing
+            web development expertise while capturing important user inputs.
+          </p>
+          <p class="body-content">
+            This registration form is designed to gather vital information such
+            as user details, coding proficiency, and work experience, creating
+            an effective tool for anyone in the web development field. It walks
+            users through multiple steps, including account creation, language
+            selection, experience assessment, and user feedback. With a mix of
+            radio buttons, checkboxes, and dropdown menus, the form ensures that
+            users can easily input their data. It also features interactive
+            elements, like showing an additional input field when users select
+            "Other" in the "How did you hear about us?" section.
+          </p>
+          <p>Category: <span>Web Development Forms</span></p>
+          <p class="tags">
+            Tags: <span>#WebDevelopment</span>, <span>#FormDesign</span>,
+            <span>#UserExperience</span>, <span>#Frontend</span>
+          </p>
+
+          <p class="footer-content">
+            <span>Gurdeep Kaur</span>
+            <span>October 27, 2024</span>
+            <a href="article5.html" class="read-more">
+              <i class="fa fa-arrow-right read-more-icon"></i>
+            </a>
+          </p>
+        </div>
+
+        <div class="article" id="gurdeep-article6">
+          <div class="image-container">
+            <img
+              src="images/gurdeep/article6.png"
+              alt="Snake and Ladder Game"
+            />
+          </div>
+          <h3>Snake and Ladder Game</h3>
+          <p class="excerpt">
+            Dive into this fun and interactive Snake and Ladder game built with
+            JavaScript, offering an engaging way to showcase your programming
+            skills while delivering a classic board game experience.
+          </p>
+          <p class="body-content">
+            This Snake and Ladder game provides an exciting, user-friendly
+            experience where players can roll the dice and navigate their way
+            across the board. The game board is dynamically generated with
+            numbered squares, snakes that send you backward, and ladders that
+            help you climb up, following traditional game rules. JavaScript
+            handles the game logic, including dice rolls, player movement, and
+            win condition checks. With a clean interface and a touch of
+            randomness, it ensures every game session is unique. It's perfect
+            for practicing JavaScript while offering fun gameplay that can be
+            enjoyed by players of all ages.
+          </p>
+          <p>Category: <span>Game Development</span></p>
+          <p class="tags">
+            Tags: <span>#GameDevelopment</span>, <span>#JavaScript</span>,
+            <span>#BoardGame</span>, <span>#SnakeAndLadder</span>
+          </p>
+
+          <p class="footer-content">
+            <span>Gurdeep Kaur</span>
+            <span>December 7, 2024</span>
+            <a href="article6.html" class="read-more">
+              <i class="fa fa-arrow-right read-more-icon"></i>
+            </a>
+          </p>
+        </div>
+      </section>
+
+      <!-- 4-POPULAR POSTS SECTION -->
+      <h2 id="popular-posts-heading">Popular Posts</h2>
+      <section id="popular-posts">
+        <div class="post">
+          <div class="circle-container">
+            <span class="number">1</span>
+            <img
+              src="images/post1.jpg"
+              alt="Showcasing a futuristic design or a tech trend."
+            />
+          </div>
+          <div>
+            <a href="#" class="post-heading"
+              >Web Development Trends to Watch in 2025</a
+            >
+          </div>
+        </div>
+
+        <div class="post">
+          <div class="circle-container">
+            <span class="number">2</span>
+            <img src="images/post2.webp" alt="Post 2" />
+          </div>
+          <div>
+            <a href="#" class="post-heading">Top 10 Web Developer Tools</a>
+          </div>
+        </div>
+
+        <div class="post">
+          <div class="circle-container">
+            <span class="number">3</span>
+            <img
+              src="images/post3.png"
+              alt="Visual representing different screen sizes or a website layout."
+            />
+          </div>
+          <div>
+            <a href="#" class="post-heading"
+              >Mastering Responsive Design: A Step-by-Step Guide</a
+            >
+          </div>
+        </div>
+
+        <div class="post">
+          <div class="circle-container">
+            <span class="number">4</span>
+            <img
+              src="images/post4.png"
+              alt="Visual comparison or logos of React, Vue, and Angular"
+            />
+          </div>
+          <div>
+            <a href="#" class="post-heading"
+              >Understanding JavaScript Frameworks: React vs. Vue vs. Angular</a
+            >
+          </div>
+        </div>
+      </section>
+
+      <!-- 5-SUBSCRIBE SECTION -->
+      <section id="subscribe-section">
+        <div class="subscribe-heading">
+          <h2>
+            <span>S</span><span>U</span><span>B</span><span>S</span
+            ><span>C</span><span>R</span><span>I</span><span>B</span
+            ><span>E</span> <span>N</span><span>O</span><span>W</span>
+          </h2>
+          <p>Stay updated with the latest projects and articles!</p>
+        </div>
+
+        <div class="subscribe-form">
+          <input
+            type="email"
+            placeholder="Enter your email"
+            id="subscribe-email"
+          />
+          <button type="submit" id="subscribe-button">Subscribe</button>
+        </div>
+      </section>
+    </main>
+
+    <!-------------- FOOTER SECTION -------------->
+    <footer>
+      <nav class="footer-nav" id="contact" aria-label="Main Navigation">
+        <ul class="footer-menu">
+          <li class="menu-item" data-role="footer-menu-title">Menu</li>
+          <li class="menu-item">
+            <a href="index.html" class="footer-link">Home</a>
+          </li>
+          <li class="menu-item">
+            <a href="#article-heading" class="footer-link">Latest Articles</a>
+          </li>
+          <li class="menu-item">
+            <a href="#popular-posts-heading" class="footer-link active"
+              >Popular Posts</a
+            >
+          </li>
+          <li class="menu-item">
+            <a href="#subscribe-section" class="footer-link">Subscribe</a>
+          </li>
+          <li class="menu-item special">
+            <a href="#contact" class="footer-link">Contact</a>
+          </li>
+        </ul>
+      </nav>
+
+      <!--Social Media Icons Section-->
+      <div class="social-icons">
+        <a href="https://youtube.com" class="social-icon">
+          <img src="images/youtube-icon.svg" alt="Facebook" />
+        </a>
+        <a href="https://twitter.com" class="social-icon">
+          <img src="images/twitter-icon.svg" alt="Twitter" />
+        </a>
+        <a href="https://instagram.com" class="social-icon">
+          <img src="images/instagram-icon.svg" alt="Instagram" />
+        </a>
+      </div>
+
+      <p>© 2024 Simply Seven - All rights reserved.</p>
+    </footer>
+
+    <script src="scripts/script.js"></script>
+  </body>
+</html>

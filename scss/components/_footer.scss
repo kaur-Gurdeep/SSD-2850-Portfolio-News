@@ -1,0 +1,125 @@
+@use '../variables' as *;
+
+footer {
+    background-color: $background-color;
+    color: $white;
+    font-family: $body-font;
+    text-align: center;
+    border-top: 1px solid $bottom-border;
+
+    .footer-nav {
+        display: inline-block;
+        justify-content: space-around;
+        padding: 1rem 0;
+        align-items: center;
+        height: auto;
+
+        .footer-menu {
+            padding: 1rem 0;
+
+            .menu-item {
+                list-style: none;
+                margin: 5px;
+                padding: 0.5em;
+                border: 1px solid transparent; 
+
+                .footer-link {
+                    text-decoration: none;
+                    color: $white;
+                    transition: color 0.3s ease, transform 0.3s ease;
+
+                    &:hover {
+                        color: $lime-green;
+                        transform: translateY(5px);
+                    }
+                }
+                &:hover{
+                    transform: scale(1.1);
+                }
+            }
+        }
+    }
+
+    .social-icons {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        margin-bottom: 1rem;
+
+        .social-icon {
+            display: inline-block;
+            width: 3rem;
+            height: 3rem;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+
+            img {
+                width: 3rem;
+                height: 3rem;
+                object-fit: cover;
+                transition: transform 0.3s ease;
+            }
+
+            &:hover img {
+                transform: rotate(10deg);
+            }
+        }
+
+        .social-icon:hover {
+            transform: scale(1.2);
+        }
+    }
+
+    p {
+        color: $lime-green;
+        font-family: $title-font;
+        font-weight: 600;
+        margin: 0.5rem 0;
+    }
+}
+
+/* Special styling for menu items with specific roles */
+.menu-item:not(:first-child) {
+    border: 1px solid $lime-green;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+}
+
+/* Overwrite Menu Li */
+[data-role='footer-menu-title'] {
+    text-transform: uppercase;
+    color: $lime-green;
+    font-weight: 900;
+    cursor: pointer;
+    transition: color 0.3s ease;
+
+    &:hover {
+        color: $white;
+    }
+}
+
+
+///////// MEDIA QUERIES ////////////
+
+/* Tablet and larger devices */
+@media (min-width: 768px) {
+        .footer-nav {
+            display: inline-block;
+            justify-content: space-around;
+            padding: 1rem 0;
+            align-items: center;
+            height: auto;
+
+        .footer-menu {
+            display: flex;
+            justify-content: space-around;
+            padding: 1rem 0;
+        }
+    }
+}
+  
+@media (min-width: 1024px){
+    .footer-menu{
+        font-size: 1.3rem;
+    }
+}

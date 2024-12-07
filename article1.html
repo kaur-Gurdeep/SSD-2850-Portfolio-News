@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Article1 - Simple Calculator</title>
+    <!-- LINK TO BARLOW GOOGLE FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&family=Creepster&family=Pirata+One&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- INTER AND POPPINS GOOGLE FONTS -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Poppins:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+      integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- LINK EXTERNAL STYLESHEET -->
+    <link rel="stylesheet" href="styles/style.css" />
+  </head>
+  <body>
+    <!-------------- HEADER SECTION -------------->
+    <header>
+      <nav class="header-nav">
+        <!-- LOGO -->
+        <img src="images/logoc.png" alt="Simply Seven News Logo" />
+
+        <!-- HAMBURGER MENU FOR MOBILE -->
+        <div class="hamburger-menu" id="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+
+        <!-- MAIN NAVIGATION -->
+        <ul class="nav-links" id="nav-links" aria-label="Main Navigation">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="#article-heading">Latest Articles</a></li>
+          <li><a href="#popular-posts-heading">Popular Posts</a></li>
+          <li><a href="#subscribe-section">Subscribe</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+
+        <!--SEARCH BAR-->
+        <div class="search-container">
+          <input type="text" placeholder="Search..." class="search-input" />
+          <i class="fas fa-search search-icon"></i>
+        </div>
+      </nav>
+    </header>
+
+    <!-------------- MAIN SECTION -------------- -->
+    <main class="article-container">
+      <section class="article-banner">
+        <div class="image-container">
+          <img src="images/gurdeep/article1.png" alt="Simple Calculator" />
+        </div>
+
+        <div class="content-container">
+          <h2>Creating a Simple Calculator with HTML, CSS, and JavaScript</h2>
+          <p>by <strong>Gurdeep Kaur</strong> | <em>October 15, 2024</em></p>
+          <p class="aCategory">
+            Category: <span>JavaScript Applications</span>
+          </p>
+          <p class="aExcerpt">
+            Dive into the world of game development by recreating the classic
+            Snake Game.
+          </p>
+          <p class="bodyContent">
+            This project includes features like keyboard controls, collision
+            detection, and score tracking, built using HTML Canvas and
+            JavaScript. It demonstrates core game logic and canvas rendering
+            techniques.
+          </p>
+        </div>
+      </section>
+
+      <section id="article-content">
+        <p>
+          In this article, I will walk you through the process of creating a
+          simple yet functional calculator using HTML, CSS, and JavaScript.
+        </p>
+        <h3>Step 1: Setting Up the HTML Structure</h3>
+        <pre><code>&lt;div id="calculator"&gt;
+          &lt;input id="display" readonly&gt;
+          &lt;div id="keys"&gt;
+              &lt;button class="operator" onclick="Display('+')"&gt;+&lt;/button&gt;
+              &lt;button onclick="Display('7')"&gt;7&lt;/button&gt;
+              &lt;button onclick="Display('8')"&gt;8&lt;/button&gt;
+              &lt;button onclick="Display('9')"&gt;9&lt;/button&gt;
+              &lt;button class="operator" onclick="Display('-')"&gt;-&lt;/button&gt;
+              &lt;button onclick="Display('4')"&gt;4&lt;/button&gt;
+              &lt;button onclick="Display('5')"&gt;5&lt;/button&gt;
+              &lt;button onclick="Display('6')"&gt;6&lt;/button&gt;
+              &lt;button class="operator" onclick="Display('*')"&gt;*&lt;/button&gt;
+              &lt;button onclick="Display('1')"&gt;1&lt;/button&gt;
+              &lt;button onclick="Display('2')"&gt;2&lt;/button&gt;
+              &lt;button onclick="Display('3')"&gt;3&lt;/button&gt;
+              &lt;button class="operator" onclick="Display('/')"&gt;/&lt;/button&gt;
+              &lt;button onclick="Display('0')"&gt;0&lt;/button&gt;
+              &lt;button onclick="Display('.')"&gt;.&lt;/button&gt;
+              &lt;button onclick="calculate()"&gt;=&lt;/button&gt;
+              &lt;button onclick="clearDisplay()"&gt;C&lt;/button&gt;
+          &lt;/div&gt;
+      &lt;/div&gt;</code></pre>
+
+        <h3>Step 2: Styling the Calculator with CSS</h3>
+        <pre><code>body {
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: hsl(0 0% 95%);
+      }
+      
+      #calculator {
+        font-family: Arial, Helvetica, sans-serif;
+        background-color: hsl(0 0% 15%);
+        border-radius: 15px;
+        max-width: 500px;
+        overflow: hidden;
+      }
+      
+      #display {
+        width: 100%;
+        padding: 20px;
+        font-size: 5rem;
+        text-align: left;
+        border: none;
+        background-color: hsl(0 0% 20%);
+        color: white;
+      }
+      
+      #keys {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 10px;
+        padding: 20px;
+      }
+      
+      button {
+        height: 100px;
+        width: 100px;
+        border-radius: 50%;
+        border: none;
+        background-color: hsl(0, 0%, 30%);
+        color: white;
+        font-size: 3rem;
+        font-weight: bold;
+        cursor: pointer;
+      }
+      
+      button:hover {
+        background-color: hsl(0, 0%, 40%);
+      }
+      
+      button:active {
+        background-color: hsl(0, 0%, 50%);
+      }
+      
+      .operator {
+        background-color: hsl(35 100% 55%);
+      }
+      
+      .operator:hover {
+        background-color: hsl(35 100% 65%);
+      }
+      
+      .operator:active {
+        background-color: hsl(35 100% 75%);
+      }</code></pre>
+
+        <h3>Step 3: Adding Functionality with JavaScript</h3>
+        <pre><code>const display = document.getElementById("display");
+      
+      function Display(input) {
+        display.value += input;
+      }
+      
+      function clearDisplay() {
+        display.value = "";
+      }
+      
+      function calculate() {
+        try {
+          display.value = eval(display.value);
+        } catch (error) {
+          display.value = "Error";
+        }
+      }</code></pre>
+
+        <h3>Conclusion</h3>
+        <p>
+          In this project, I explored the fundamentals of web development by
+          creating a simple yet functional calculator. I structured the layout
+          using HTML, styled it with CSS, and added interactivity through
+          JavaScript. This hands-on experience helped me enhance my
+          understanding of essential web technologies and problem-solving
+          skills. Working on this project was a great way to apply my knowledge
+          and improve my confidence in building interactive web applications.
+          I'm excited to continue learning and tackling more challenging
+          projects in the future.
+        </p>
+        <p class="tags">
+          <span>#JavaScript</span> <span>#WebDevelopment</span>
+          <span>#Calculator</span>
+        </p>
+      </section>
+
+      <section class="read-next-article">
+        <div class="button-container">
+          <a href="javascript:history.back()" class="back-button">Back</a>
+          <a href="article2.html" class="next-article-link"
+            >Go to Next Article</a
+          >
+        </div>
+      </section>
+    </main>
+
+    <!-------------- FOOTER SECTION -------------->
+    <footer>
+      <nav class="footer-nav" id="contact" aria-label="Main Navigation">
+        <ul class="footer-menu">
+          <li class="menu-item" data-role="footer-menu-title">Menu</li>
+          <li class="menu-item">
+            <a href="index.html" class="footer-link">Home</a>
+          </li>
+          <li class="menu-item">
+            <a href="#article-heading" class="footer-link">Latest Articles</a>
+          </li>
+          <li class="menu-item">
+            <a href="#popular-posts-heading" class="footer-link active"
+              >Popular Posts</a
+            >
+          </li>
+          <li class="menu-item">
+            <a href="#subscribe-section" class="footer-link">Subscribe</a>
+          </li>
+          <li class="menu-item special">
+            <a href="#contact" class="footer-link">Contact</a>
+          </li>
+        </ul>
+      </nav>
+
+      <!--Social Media Icons Section-->
+      <div class="social-icons">
+        <a href="https://youtube.com" class="social-icon">
+          <img src="images/youtube-icon.svg" alt="Facebook" />
+        </a>
+        <a href="https://twitter.com" class="social-icon">
+          <img src="images/twitter-icon.svg" alt="Twitter" />
+        </a>
+        <a href="https://instagram.com" class="social-icon">
+          <img src="images/instagram-icon.svg" alt="Instagram" />
+        </a>
+      </div>
+
+      <p>© 2024 Simply Seven - All rights reserved.</p>
+    </footer>
+
+    <script src="scripts/script.js"></script>
+  </body>
+</html>

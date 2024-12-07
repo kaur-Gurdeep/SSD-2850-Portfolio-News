@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Article6 - Snake and Ladder Game</title>
+    <!-- LINK TO BARLOW GOOGLE FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&family=Creepster&family=Pirata+One&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- INTER AND POPPINS GOOGLE FONTS -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Poppins:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+      integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- LINK EXTERNAL STYLESHEET -->
+    <link rel="stylesheet" href="styles/style.css" />
+  </head>
+  <body>
+    <!-------------- HEADER SECTION -------------->
+    <header>
+      <nav class="header-nav">
+        <!-- LOGO -->
+        <img src="images/logoc.png" alt="Simply Seven News Logo" />
+
+        <!-- HAMBURGER MENU FOR MOBILE -->
+        <div class="hamburger-menu" id="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+
+        <!-- MAIN NAVIGATION -->
+        <ul class="nav-links" id="nav-links" aria-label="Main Navigation">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="#article-heading">Latest Articles</a></li>
+          <li><a href="#popular-posts-heading">Popular Posts</a></li>
+          <li><a href="#subscribe-section">Subscribe</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+
+        <!--SEARCH BAR-->
+        <div class="search-container">
+          <input type="text" placeholder="Search..." class="search-input" />
+          <i class="fas fa-search search-icon"></i>
+        </div>
+      </nav>
+    </header>
+    <!-------------- MAIN SECTION -------------- -->
+    <main class="article-container">
+      <section class="article-banner">
+        <div class="image-container">
+          <img src="images/gurdeep/article6.png" alt="Snake and Ladder Game" />
+        </div>
+
+        <div class="content-container">
+          <h2>Snake and Ladder Game</h2>
+          <p>by <strong>Gurdeep Kaur</strong> | <em>December 6, 2024</em></p>
+          <p class="aCategory">Category: <span>Game Development</span></p>
+          <p class="aExcerpt">
+            Dive into this fun and interactive Snake and Ladder game built with
+            JavaScript, offering an engaging way to showcase your programming
+            skills while delivering a classic board game experience.
+          </p>
+          <p class="bodyContent">
+            This Snake and Ladder game provides an exciting, user-friendly
+            experience where players can roll the dice and navigate their way
+            across the board. The game board is dynamically generated with
+            numbered squares, snakes that send you backward, and ladders that
+            help you climb up, following traditional game rules. JavaScript
+            handles the game logic, including dice rolls, player movement, and
+            win condition checks. With a clean interface and a touch of
+            randomness, it ensures every game session is unique. It's perfect
+            for practicing JavaScript while offering fun gameplay that can be
+            enjoyed by players of all ages.
+          </p>
+        </div>
+      </section>
+
+      <section id="article-content">
+        <p>
+          This article walks you through the process of creating the "Pink Mode
+          Game," a multiplayer game where players can join, switch turns, and
+          score points. The game features an interactive interface built with
+          HTML, CSS, and JavaScript, designed for an engaging and dynamic user
+          experience.
+        </p>
+
+        <h3>Step 1: Setting Up the HTML Structure</h3>
+        <pre><code>&lt;div id="container"&gt; 
+          &lt;div id="scoreBoard"&gt; 
+            &lt;h1 id="heading"&gt;Snake and Ladder Game&lt;/h1&gt; 
+          &lt;/div&gt; 
+          &lt;div id="gameBoard" class="game-board"&gt; 
+            &lt;div class="input-container"&gt; 
+              &lt;label for="playerNameInput"&gt;Player Name&lt;/label&gt; 
+              &lt;input type="text" id="playerNameInput" placeholder="Enter Name" /&gt; 
+              &lt;button id="joinButton"&gt;Join&lt;/button&gt; 
+            &lt;/div&gt; 
+            &lt;div class="column-container"&gt; 
+              &lt;button id="rollDiceButton"&gt;Roll Dice&lt;/button&gt; 
+              &lt;button id="restartButton"&gt;Restart&lt;/button&gt; 
+            &lt;/div&gt; 
+          &lt;/div&gt; 
+        &lt;/div&gt;</code></pre>
+
+        <h3>Step 2: Styling the Game Interface with CSS</h3>
+        <pre><code>body { 
+          font-family: Arial, Helvetica, sans-serif; 
+          background-color: #f8f0fa; 
+          display: flex; 
+          justify-content: center; 
+          align-items: center; 
+          height: 100vh; 
+        } 
+        #container { 
+          display: flex; 
+          flex-direction: column; 
+          background-color: #ffccff; 
+          border-radius: 10px; 
+          box-shadow: 0 0 15px rgba(0, 0, 0, 0.3); 
+          padding: 5px; 
+          height: 90%; 
+          width: 90%; 
+          max-width: 800px; 
+          text-align: center; 
+        } 
+        #scoreBoard { 
+          height: 100px; 
+          display: flex; 
+          justify-content: space-around; 
+          align-items: center; 
+          background-color: white; 
+          overflow: hidden; 
+        } 
+        .player-scoreboard { 
+          font-size: 1.3em; 
+        } 
+        #gameBoard { 
+          display: flex; 
+          flex-direction: column; 
+          flex: 1; 
+          gap: 20px; 
+        }</code></pre>
+
+        <h3>Step 3: Adding Game Logic with JavaScript</h3>
+        <pre><code>"use strict"; 
+        document.addEventListener("DOMContentLoaded", () => { 
+          class Player { 
+            constructor(name) { 
+              this.name = name; 
+              this.position = 0; 
+            } 
+            rollDice() { 
+              return Math.floor(Math.random() * 6) + 1; 
+            } 
+            move(position) { 
+              this.position = position; 
+              game.updatePlayerPosition(game.players.indexOf(this)); 
+            } 
+          } 
+          
+          const game = { 
+            players: [], 
+            addPlayer(player) { 
+              this.players.push(player); 
+              document.getElementById("scoreBoard").innerHTML = `${player.name}: 0`; 
+            }, 
+          
+            updatePlayerPosition(playerIndex) { 
+              document.getElementById("scoreBoard").innerHTML = 
+                `${this.players[playerIndex].name}: ${this.players[playerIndex].position}`; 
+            }, 
+          
+            playTurn() { 
+              const diceRoll = game.players[game.activePlayerIndex].rollDice(); 
+              game.players[game.activePlayerIndex].move(diceRoll); 
+              // Implement snake and ladder rules here 
+            }, 
+          }; 
+          
+          document.getElementById("joinButton").addEventListener("click", () => { 
+            const playerName = document.getElementById("playerNameInput").value.trim(); 
+            if (playerName) { 
+              const player = new Player(playerName); 
+              game.addPlayer(player); 
+            } 
+          }); 
+          
+          document.getElementById("rollDiceButton").addEventListener("click", () => { 
+            game.playTurn(); 
+          }); 
+        });</code></pre>
+
+        <h3>Step 4: Enjoy the Game!</h3>
+        <p>
+          The game is ready to play! The player can roll the dice and advance
+          their position on the board, trying to avoid snakes while looking for
+          ladders to climb to a higher spot. The winner is the player who
+          reaches the last square.
+          <a href="#" class="game-link">Play game</a>
+        </p>
+
+        <h3>Conclusion</h3>
+        <p>
+          This Snake and Ladder game serves as a great project to practice
+          JavaScript and game development concepts. You can enhance it by adding
+          features like multiple players, different board sizes, and special
+          animations for a more engaging experience.
+        </p>
+        <p class="tags">
+          <span>#JavaScript</span> <span>#GameDevelopment</span>
+          <span>#MultiplayerGame</span> <span>#Frontend</span>
+        </p>
+      </section>
+
+      <section class="read-next-article">
+        <div class="button-container">
+          <a href="javascript:history.back()" class="back-button">Back</a>
+          <a href="article1.html" class="next-article-link"
+            >Go to Next Article</a
+          >
+        </div>
+      </section>
+    </main>
+
+    <!-------------- FOOTER SECTION -------------->
+    <footer>
+      <nav class="footer-nav" id="contact" aria-label="Main Navigation">
+        <ul class="footer-menu">
+          <li class="menu-item" data-role="footer-menu-title">Menu</li>
+          <li class="menu-item">
+            <a href="index.html" class="footer-link">Home</a>
+          </li>
+          <li class="menu-item">
+            <a href="#article-heading" class="footer-link">Latest Articles</a>
+          </li>
+          <li class="menu-item">
+            <a href="#popular-posts-heading" class="footer-link active"
+              >Popular Posts</a
+            >
+          </li>
+          <li class="menu-item">
+            <a href="#subscribe-section" class="footer-link">Subscribe</a>
+          </li>
+          <li class="menu-item special">
+            <a href="#contact" class="footer-link">Contact</a>
+          </li>
+        </ul>
+      </nav>
+
+      <!--Social Media Icons Section-->
+      <div class="social-icons">
+        <a href="https://youtube.com" class="social-icon">
+          <img src="images/youtube-icon.svg" alt="Facebook" />
+        </a>
+        <a href="https://twitter.com" class="social-icon">
+          <img src="images/twitter-icon.svg" alt="Twitter" />
+        </a>
+        <a href="https://instagram.com" class="social-icon">
+          <img src="images/instagram-icon.svg" alt="Instagram" />
+        </a>
+      </div>
+
+      <p>© 2024 Simply Seven - All rights reserved.</p>
+    </footer>
+
+    <script src="scripts/script.js"></script>
+  </body>
+</html>

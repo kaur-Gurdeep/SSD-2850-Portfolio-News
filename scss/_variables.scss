@@ -1,0 +1,33 @@
+$background-color: black;
+$text-color: #bdc3c7;
+$body-font: 'Inter', sans-serif;
+$title-font: 'Barlow Condensed', sans-serif;
+$off-white: #b9b8b8;
+$white: #fff;
+$lime-green: #a9db5f;
+$vibrant-yellow: rgb(254, 248, 76);
+$bottom-border: #444;
+$grey: #333;
+$transition-duration: 0.4s;
+$blue: #1e90ff;
+
+//FOR HERO SECTION
+$font-size-small: 3rem;
+$font-size-medium: 6rem;
+$font-size-large: 8rem;
+
+//FOR POPULAR POSTS SECTION
+$circle-size-small: 160px;
+$circle-size-medium: 200px;
+$circle-size-large: 300px;
+$number-size-small: 40px;
+$number-size-medium: 50px;
+$number-size-large: 60px;
+
+//FOR ARTICLE SECTION
+$grid-template-small: 1fr;
+$grid-template-medium: repeat(2, 1fr);
+$grid-template-large: repeat(3, minmax(0, 1fr));
+
+
+

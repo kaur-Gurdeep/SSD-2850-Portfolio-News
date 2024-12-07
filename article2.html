@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Article2 - Snake Game</title>
+    <!-- LINK TO BARLOW GOOGLE FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&family=Creepster&family=Pirata+One&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- INTER AND POPPINS GOOGLE FONTS -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Poppins:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+      integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- LINK EXTERNAL STYLESHEET -->
+    <link rel="stylesheet" href="styles/style.css" />
+  </head>
+  <body>
+    <!-------------- HEADER SECTION -------------->
+    <header>
+      <nav class="header-nav">
+        <!-- LOGO -->
+        <img src="images/logoc.png" alt="Simply Seven News Logo" />
+
+        <!-- HAMBURGER MENU FOR MOBILE -->
+        <div class="hamburger-menu" id="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+
+        <!-- MAIN NAVIGATION -->
+        <ul class="nav-links" id="nav-links" aria-label="Main Navigation">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="#article-heading">Latest Articles</a></li>
+          <li><a href="#popular-posts-heading">Popular Posts</a></li>
+          <li><a href="#subscribe-section">Subscribe</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+
+        <!--SEARCH BAR-->
+        <div class="search-container">
+          <input type="text" placeholder="Search..." class="search-input" />
+          <i class="fas fa-search search-icon"></i>
+        </div>
+      </nav>
+    </header>
+    <!-------------- MAIN SECTION -------------- -->
+    <main class="article-container">
+      <section class="article-banner">
+        <div class="image-container">
+          <img src="images/gurdeep/article2.png" alt="Snake Game" />
+        </div>
+
+        <div class="content-container">
+          <h2>Building a Classic Snake Game with JavaScript</h2>
+          <p>by <strong>Gurdeep Kaur</strong> | <em>November 04, 2024</em></p>
+          <p class="aCategory">Category: <span>JavaScript Games</span></p>
+          <p class="aExcerpt">
+            Dive into the world of game development by creating the classic
+            Snake Game.
+          </p>
+          <p class="bodyContent">
+            This project involves building a dynamic game using JavaScript. It
+            covers essential game logic, canvas rendering, collision detection,
+            and score tracking.
+          </p>
+        </div>
+      </section>
+
+      <section id="article-content">
+        <p>
+          In this article, I will guide you through the process of creating a
+          classic Snake Game using HTML, CSS, and JavaScript. This game is a fun
+          project that will help you understand important programming concepts
+          such as game logic, event handling, and dynamic rendering.
+        </p>
+        <h3>Step 1: Setting Up the HTML Structure</h3>
+        <pre><code>&lt;canvas id="gameCanvas" width="500" height="500"&gt;&lt;/canvas&gt;</code></pre>
+
+        <h3>Step 2: Styling the Game with CSS</h3>
+        <pre><code>#gameCanvas {
+      display: block;
+      margin: 50px auto;
+      background-color: #000;
+    }</code></pre>
+
+        <h3>Step 3: Adding Functionality with JavaScript</h3>
+        <pre><code>const canvas = document.getElementById("gameCanvas");
+    const ctx = canvas.getContext("2d");
+    let snake = [{x: 5, y: 5}];
+    let direction = "RIGHT";
+    let food = {x: 10, y: 10};
+    
+    function gameLoop() {
+      moveSnake();
+      detectCollision();
+      updateCanvas();
+      setTimeout(gameLoop, 100);
+    }
+    
+    function moveSnake() {
+      let head = {...snake[0]};
+      if (direction === "RIGHT") head.x++;
+      if (direction === "LEFT") head.x--;
+      if (direction === "UP") head.y--;
+      if (direction === "DOWN") head.y++;
+      snake.unshift(head);
+      snake.pop();
+    }
+    
+    function updateCanvas() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      ctx.fillStyle = "green";
+      for (let segment of snake) {
+        ctx.fillRect(segment.x * 10, segment.y * 10, 10, 10);
+      }
+      ctx.fillStyle = "red";
+      ctx.fillRect(food.x * 10, food.y * 10, 10, 10);
+    }</code></pre>
+
+        <h3>Conclusion</h3>
+        <p>
+          This tutorial demonstrated how to build the classic Snake Game from
+          scratch. With JavaScript, I was able to create a simple yet functional
+          game that you can extend with additional features, such as levels,
+          speed increases, and more complex game mechanics.
+        </p>
+
+        <p>
+          I hope you enjoyed building the Snake Game! Feel free to experiment
+          with the design and features to create your own variations.
+        </p>
+
+        <p class="tags">
+          <span>#JavaScript</span> <span>#GameDevelopment</span>
+          <span>#Canvas</span>
+        </p>
+      </section>
+
+      <section class="read-next-article">
+        <div class="button-container">
+          <a href="javascript:history.back()" class="back-button">Back</a>
+          <a href="article3.html" class="next-article-link"
+            >Go to Next Article</a
+          >
+        </div>
+      </section>
+    </main>
+
+    <!-------------- FOOTER SECTION -------------->
+    <footer>
+      <nav class="footer-nav" id="contact" aria-label="Main Navigation">
+        <ul class="footer-menu">
+          <li class="menu-item" data-role="footer-menu-title">Menu</li>
+          <li class="menu-item">
+            <a href="index.html" class="footer-link">Home</a>
+          </li>
+          <li class="menu-item">
+            <a href="#article-heading" class="footer-link">Latest Articles</a>
+          </li>
+          <li class="menu-item">
+            <a href="#popular-posts-heading" class="footer-link active"
+              >Popular Posts</a
+            >
+          </li>
+          <li class="menu-item">
+            <a href="#subscribe-section" class="footer-link">Subscribe</a>
+          </li>
+          <li class="menu-item special">
+            <a href="#contact" class="footer-link">Contact</a>
+          </li>
+        </ul>
+      </nav>
+
+      <!--Social Media Icons Section-->
+      <div class="social-icons">
+        <a href="https://youtube.com" class="social-icon">
+          <img src="images/youtube-icon.svg" alt="Facebook" />
+        </a>
+        <a href="https://twitter.com" class="social-icon">
+          <img src="images/twitter-icon.svg" alt="Twitter" />
+        </a>
+        <a href="https://instagram.com" class="social-icon">
+          <img src="images/instagram-icon.svg" alt="Instagram" />
+        </a>
+      </div>
+
+      <p>© 2024 Simply Seven - All rights reserved.</p>
+    </footer>
+
+    <script src="scripts/script.js"></script>
+  </body>
+</html>

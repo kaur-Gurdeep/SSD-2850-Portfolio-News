@@ -1,0 +1,59 @@
+@use './variables' as *;
+
+// Base mixin for Flexbox
+@mixin flex-container($direction: row, $justify: center, $align: center, $wrap: nowrap) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+  flex-wrap: $wrap;
+}
+
+//Included in main.scss and article.scss
+@mixin border-animation($base-bg: #000, $hover-bg: #222) {
+  border: 4px solid transparent;
+  border-radius: 10px;
+  animation: border-glow 3s infinite linear;
+
+  @keyframes border-glow {
+    0% {
+      background: linear-gradient($base-bg, $base-bg) padding-box,
+                  linear-gradient(45deg, #1e90ff, #ff6347, #32cd32, #ff4500) border-box;
+    }
+    50% {
+      background: linear-gradient($base-bg, $base-bg) padding-box,
+                  linear-gradient(45deg, #ff6347, #32cd32, #1e90ff, #ff4500) border-box;
+    }
+    100% {
+      background: linear-gradient($base-bg, $base-bg) padding-box,
+                  linear-gradient(45deg, #1e90ff, #ff6347, #32cd32, #ff4500) border-box;
+    }
+  }
+}
+
+//Included in hero section of main.scss
+@mixin gradient-animation {
+    background: linear-gradient(90deg, #ff1493, #f1c40f, #1abc9c, #9b59b6);
+    background-size: 300% 100%;
+    animation: moveGradient 3s infinite ease-in-out;
+  }
+
+// Keyframes for the gradient move animation
+@keyframes moveGradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+@mixin hover-scale($scale){
+    transition: transform 0.3s ease;
+    &:hover{
+        transform: scaleY($scale);
+    }
+}

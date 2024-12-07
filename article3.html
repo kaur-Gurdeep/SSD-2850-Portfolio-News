@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Article3 - Building an Interactive Timer and Smooth Animation Control
+      System
+    </title>
+    <!-- LINK TO BARLOW GOOGLE FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&family=Creepster&family=Pirata+One&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- INTER AND POPPINS GOOGLE FONTS -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Poppins:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+      integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- LINK EXTERNAL STYLESHEET -->
+    <link rel="stylesheet" href="styles/style.css" />
+  </head>
+  <body>
+    <!-------------- HEADER SECTION -------------->
+    <header>
+      <nav class="header-nav">
+        <!-- LOGO -->
+        <img src="images/logoc.png" alt="Simply Seven News Logo" />
+
+        <!-- HAMBURGER MENU FOR MOBILE -->
+        <div class="hamburger-menu" id="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+
+        <!-- MAIN NAVIGATION -->
+        <ul class="nav-links" id="nav-links" aria-label="Main Navigation">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="#article-heading">Latest Articles</a></li>
+          <li><a href="#popular-posts-heading">Popular Posts</a></li>
+          <li><a href="#subscribe-section">Subscribe</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+
+        <!--SEARCH BAR-->
+        <div class="search-container">
+          <input type="text" placeholder="Search..." class="search-input" />
+          <i class="fas fa-search search-icon"></i>
+        </div>
+      </nav>
+    </header>
+    <!-------------- MAIN SECTION -------------- -->
+    <main class="article-container">
+      <section class="article-banner">
+        <div class="image-container">
+          <img
+            src="images/gurdeep/article3.png"
+            alt="Timer and Animation Control"
+          />
+        </div>
+
+        <div class="content-container">
+          <h2>Creating a Timer with Smooth Animation Control</h2>
+          <p>by <strong>Gurdeep Kaur</strong> | <em>December 6, 2024</em></p>
+          <p class="aCategory">
+            Category: <span>JavaScript Applications</span>
+          </p>
+          <p class="aExcerpt">
+            Explore building an interactive timer with smooth animation and
+            progress bar using HTML, CSS, and JavaScript.
+          </p>
+          <p class="bodyContent">
+            This project demonstrates how to create a dynamic timer with
+            animation effects like animated dots and progress bar updates based
+            on time intervals. It's a great introduction to JavaScript-driven
+            animations and user interaction.
+          </p>
+        </div>
+      </section>
+
+      <section id="article-content">
+        <p>
+          In this article, I will guide you through the process of building an
+          interactive timer and smooth animation control system using HTML, CSS,
+          and JavaScript. The project features start, pause, and reset controls,
+          along with a progress bar that fills as time passes.
+        </p>
+
+        <h3>Step 1: Setting Up the HTML Structure</h3>
+        <pre><code>&lt;div id="header"&gt;
+        &lt;div id="timeDisplay"&gt;00:00:00&lt;/div&gt;
+        &lt;div id="progressBar"&gt;
+          &lt;div id="progressMeter"&gt;&lt;/div&gt;
+        &lt;/div&gt;
+        &lt;button id="startBtn"&gt;Start&lt;/button&gt;
+        &lt;button id="stopBtn"&gt;Stop&lt;/button&gt;
+        &lt;button id="resetBtn"&gt;Reset&lt;/button&gt;
+      &lt;/div&gt;</code></pre>
+
+        <h3>Step 2: Styling the Timer and Progress Bar with CSS</h3>
+        <pre><code>body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+          }
+
+          #header {
+            text-align: center;
+            font-size: 2rem;
+          }
+
+          #progressBar {
+            background-color: #f3f3f3;
+            width: 100%;
+            height: 10px;
+            border-radius: 5px;
+            margin-top: 10px;
+          }
+
+          #progressMeter {
+            background-color: #4caf50;
+            height: 100%;
+            width: 0%;
+          }
+
+          button {
+            padding: 10px 20px;
+            font-size: 1rem;
+            margin: 5px;
+            cursor: pointer;
+            border: none;
+            background-color: #4caf50;
+            color: white;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+          }
+
+          button:hover {
+            background-color: #45a049;
+          }
+
+          button:active {
+            background-color: #3e8e41;
+          }</code></pre>
+
+        <h3>Step 3: Adding Timer Functionality with JavaScript</h3>
+        <pre><code>let timer;
+      let time = 0;
+      let running = false;
+
+      function startTimer() {
+        if (!running) {
+          running = true;
+          timer = setInterval(updateTimer, 1000);
+        }
+      }
+
+      function updateTimer() {
+        time++;
+        const seconds = time % 60;
+        const minutes = Math.floor(time / 60);
+        document.getElementById("timeDisplay").textContent =
+          `${minutes}:${seconds < 10 ? '0' + seconds : seconds}`;
+        
+        const progress = (time % 60) * 100 / 60;
+        document.getElementById("progressMeter").style.width = progress + '%';
+      }
+
+      function stopTimer() {
+        clearInterval(timer);
+        running = false;
+      }
+
+      function resetTimer() {
+        clearInterval(timer);
+        running = false;
+        time = 0;
+        document.getElementById("timeDisplay").textContent = "00:00:00";
+        document.getElementById("progressMeter").style.width = "0%";
+      }
+
+      document.getElementById("startBtn").addEventListener("click", startTimer);
+      document.getElementById("stopBtn").addEventListener("click", stopTimer);
+      document.getElementById("resetBtn").addEventListener("click", resetTimer);</code></pre>
+
+        <h3>Step 4: Adding Smooth Animation Effects</h3>
+        <pre><code>.dot {
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        background-color: #3498db;
+        border-radius: 50%;
+        animation: moveDot 2s ease-in-out infinite;
+      }
+
+      @keyframes moveDot {
+        0% { top: 0; }
+        50% { top: 50px; }
+        100% { top: 0; }
+      }</code></pre>
+
+        <h3>Conclusion</h3>
+        <p>
+          This article showed how to build an interactive timer system with
+          smooth animations using JavaScript and CSS. You can extend this by
+          adding more features such as adjustable timer lengths, sound effects,
+          or different animation styles.
+        </p>
+        <p>
+          I hope you enjoyed building this project. Feel free to modify the
+          design and animations to suit your preferences!
+        </p>
+
+        <p class="tags">
+          <span>#JavaScript</span> <span>#Animation</span> <span>#Timer</span>
+          <span>#WebDevelopment</span>
+        </p>
+      </section>
+
+      <section class="read-next-article">
+        <div class="button-container">
+          <a href="javascript:history.back()" class="back-button">Back</a>
+          <a href="article4.html" class="next-article-link"
+            >Go to Next Article</a
+          >
+        </div>
+      </section>
+    </main>
+
+    <!-------------- FOOTER SECTION -------------->
+    <footer>
+      <nav class="footer-nav" id="contact" aria-label="Main Navigation">
+        <ul class="footer-menu">
+          <li class="menu-item" data-role="footer-menu-title">Menu</li>
+          <li class="menu-item">
+            <a href="index.html" class="footer-link">Home</a>
+          </li>
+          <li class="menu-item">
+            <a href="#article-heading" class="footer-link">Latest Articles</a>
+          </li>
+          <li class="menu-item">
+            <a href="#popular-posts-heading" class="footer-link active"
+              >Popular Posts</a
+            >
+          </li>
+          <li class="menu-item">
+            <a href="#subscribe-section" class="footer-link">Subscribe</a>
+          </li>
+          <li class="menu-item special">
+            <a href="#contact" class="footer-link">Contact</a>
+          </li>
+        </ul>
+      </nav>
+
+      <!--Social Media Icons Section-->
+      <div class="social-icons">
+        <a href="https://youtube.com" class="social-icon">
+          <img src="images/youtube-icon.svg" alt="Facebook" />
+        </a>
+        <a href="https://twitter.com" class="social-icon">
+          <img src="images/twitter-icon.svg" alt="Twitter" />
+        </a>
+        <a href="https://instagram.com" class="social-icon">
+          <img src="images/instagram-icon.svg" alt="Instagram" />
+        </a>
+      </div>
+
+      <p>© 2024 Simply Seven - All rights reserved.</p>
+    </footer>
+
+    <script src="scripts/script.js"></script>
+  </body>
+</html>
